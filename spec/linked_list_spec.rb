@@ -27,4 +27,9 @@ describe 'Linked List' do
     @list.append("Tset")
     expect(@list.count).to eq(2)
   end
+
+  it 'can return a string of a single node' do
+    @list.append("boom")
+    expect(@list.to_string).to eq("boom")
+  end
 end
