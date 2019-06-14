@@ -35,7 +35,7 @@ class LinkedList
       string = @head.data
       until current_node == last_node
         current_node = current_node.next_node
-        string += current_node.data
+        string += " #{current_node.data}"
       end
     end
     string
