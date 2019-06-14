@@ -19,4 +19,12 @@ describe 'Linked List' do
     @list.append("Test")
     expect(@list.head.next_node).to eq(nil)
   end
+
+  it 'can return a count of its nodes' do
+    @list.append("Test")
+    expect(@list.count).to eq(1)
+
+    @list.append("Tset")
+    expect(@list.count).to eq(2)
+  end
 end
