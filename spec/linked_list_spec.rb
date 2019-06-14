@@ -38,4 +38,11 @@ describe 'Linked List' do
     @list.append("boom")
     expect(@list.to_string).to eq("boom")
   end
+
+  it 'can return a string of multiple node' do
+    @list.append("boom")
+    @list.append("bap")
+
+    expect(@list.to_string).to eq("boom bap")
+  end
 end
