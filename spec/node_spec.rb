@@ -13,4 +13,11 @@ RSpec.describe 'Node' do
   it 'has no next node' do
     expect(@node.next_node).to eq(nil)
   end
+
+  it 'can set a next node' do
+    data = Node.new("Data")
+    @node.set_next(data)
+
+    expect(@node.next_node).to eq(data)
+  end
 end
