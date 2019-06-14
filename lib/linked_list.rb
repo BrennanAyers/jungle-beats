@@ -28,6 +28,19 @@ class LinkedList
     nodes
   end
 
+  def to_string
+    string = ""
+    if @head != nil
+      current_node = @head
+      string = @head.data
+      until current_node == last_node
+        current_node = current_node.next_node
+        string += current_node.data
+      end
+    end
+    string
+  end
+
   private
 
   def last_node
