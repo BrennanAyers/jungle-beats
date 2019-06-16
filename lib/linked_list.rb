@@ -41,6 +41,16 @@ class LinkedList
     string
   end
 
+  def prepend(data)
+    if @head == nil
+      @head = Node.new(data)
+    else
+      new_head = Node.new(data)
+      new_head.set_next(@head)
+      @head = new_head
+    end
+  end
+
   private
 
   def last_node
