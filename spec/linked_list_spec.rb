@@ -45,4 +45,39 @@ describe 'Linked List' do
 
     expect(@list.to_string).to eq("boom bap")
   end
+
+  it 'can prepend a sound to the list' do
+    @list.append("boom")
+    @list.append("bap")
+    @list.prepend("tss")
+
+    expect(@list.head.data).to eq("tss")
+
+    expect(@list.to_string).to eq("tss boom bap")
+
+    expect(@list.count).to eq(3)
+  end
+
+  it 'can prepend an empty list' do
+    @list.prepend("tss")
+
+    expect(@list.head.data).to eq("tss")
+
+    expect(@list.to_string).to eq("tss")
+
+    expect(@list.count).to eq(1)
+  end
+
+  it 'can insert a sound into a position' do
+    @list.append("boom")
+    @list.append("bap")
+    @list.prepend("tss")
+    @list.insert(1, "boom")
+
+    expect(@list.head.data).to eq("tss")
+
+    expect(@list.to_string).to eq("tss boom boom bap")
+
+    expect(@list.count).to eq(4)
+  end
 end
