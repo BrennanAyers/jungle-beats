@@ -81,6 +81,12 @@ class LinkedList
     all_sounds.include?(data)
   end
 
+  def pop
+    new_last_index = count - 2
+    new_last_node = find_node(new_last_index)
+    new_last_node.set_next(nil)
+  end
+
   private
 
   def last_node
