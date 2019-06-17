@@ -98,4 +98,14 @@ describe 'Linked List' do
 
     expect(@list.find(1, 3)).to eq("boom boom bap")
   end
+
+  it 'can check if a sound is included' do
+    @list.append("boom")
+    @list.append("bap")
+    @list.prepend("tss")
+    @list.insert(1, "boom")
+
+    expect(@list.includes?("boom")).to eq(true)
+    expect(@list.includes?("bep")).to eq(false)
+  end
 end
