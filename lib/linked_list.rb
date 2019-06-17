@@ -62,6 +62,21 @@ class LinkedList
     end
   end
 
+  def find(index, number)
+    string = "Sorry, no sounds here!"
+    unless index > count
+      sound = find_node(index)
+      sound_index = 1
+      string = "#{sound.data}"
+      until sound_index == number
+        sound_index += 1
+        sound = find_node(sound_index)
+        string += " #{sound.data}"
+      end
+    end
+    string
+  end
+
   private
 
   def last_node
