@@ -20,6 +20,12 @@ describe 'Linked List' do
     expect(@list.head.next_node).to eq(nil)
   end
 
+  it 'can append a node to the next node' do
+    @list.append("Test")
+    @list.append("Tset")
+    expect(@list.head.next_node.data).to eq("Tset")
+  end
+
   it 'can return a count of its nodes' do
     @list.append("Test")
     expect(@list.count).to eq(1)
@@ -31,5 +37,12 @@ describe 'Linked List' do
   it 'can return a string of a single node' do
     @list.append("boom")
     expect(@list.to_string).to eq("boom")
+  end
+
+  it 'can return a string of multiple node' do
+    @list.append("boom")
+    @list.append("bap")
+
+    expect(@list.to_string).to eq("boom bap")
   end
 end
