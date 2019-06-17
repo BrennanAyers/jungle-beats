@@ -15,7 +15,7 @@ describe 'Jungle Beat' do
     @jungle_beat.append("boom bam bip")
 
     expect(@jungle_beat.list.head.data).to eq("boom")
-    expect(@jungle_beat.list.next_node.data).to eq("bam")
+    expect(@jungle_beat.list.head.next_node.data).to eq("bam")
     expect(@jungle_beat.count).to eq(3)
   end
 end
