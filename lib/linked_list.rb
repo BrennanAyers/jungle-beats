@@ -77,6 +77,10 @@ class LinkedList
     string
   end
 
+  def includes?(data)
+    all_sounds.include?(data)
+  end
+
   private
 
   def last_node
@@ -99,5 +103,17 @@ class LinkedList
       end
     end
     current_node
+  end
+
+  def all_sounds
+    if @head != nil
+      sounds = [@head.data]
+      current_node = @head
+      until current_node.next_node == nil
+        current_node = current_node.next_node
+        sounds << current_node.data
+      end
+    end
+    sounds
   end
 end
