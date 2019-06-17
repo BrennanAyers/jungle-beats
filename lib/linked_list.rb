@@ -62,6 +62,31 @@ class LinkedList
     end
   end
 
+  def find(index, number)
+    string = "Sorry, no sounds here!"
+    unless index > count
+      sound = find_node(index)
+      sound_index = 1
+      string = "#{sound.data}"
+      until sound_index == number
+        sound_index += 1
+        sound = find_node(sound_index)
+        string += " #{sound.data}"
+      end
+    end
+    string
+  end
+
+  def includes?(data)
+    all_sounds.include?(data)
+  end
+
+  def pop
+    new_last_index = count - 2
+    new_last_node = find_node(new_last_index)
+    new_last_node.set_next(nil)
+  end
+
   private
 
   def last_node
@@ -84,5 +109,17 @@ class LinkedList
       end
     end
     current_node
+  end
+
+  def all_sounds
+    if @head != nil
+      sounds = [@head.data]
+      current_node = @head
+      until current_node.next_node == nil
+        current_node = current_node.next_node
+        sounds << current_node.data
+      end
+    end
+    sounds
   end
 end

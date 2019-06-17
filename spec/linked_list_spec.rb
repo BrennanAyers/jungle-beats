@@ -80,4 +80,44 @@ describe 'Linked List' do
 
     expect(@list.count).to eq(4)
   end
+
+  it 'can find a single sound by index' do
+    @list.append("boom")
+    @list.append("bap")
+    @list.prepend("tss")
+    @list.insert(1, "boom")
+
+    expect(@list.find(2, 1)).to eq("boom")
+  end
+
+  it 'can find multiple sounds by index' do
+    @list.append("boom")
+    @list.append("bap")
+    @list.prepend("tss")
+    @list.insert(1, "boom")
+
+    expect(@list.find(1, 3)).to eq("boom boom bap")
+  end
+
+  it 'can check if a sound is included' do
+    @list.append("boom")
+    @list.append("bap")
+    @list.prepend("tss")
+    @list.insert(1, "boom")
+
+    expect(@list.includes?("boom")).to eq(true)
+    expect(@list.includes?("bep")).to eq(false)
+  end
+
+  it 'can remove the last sound of the list' do
+    @list.append("boom")
+    @list.append("bap")
+    @list.prepend("tss")
+    @list.insert(1, "boom")
+
+    @list.pop
+
+    expect(@list.count).to eq(3)
+    expect(@list.to_string).to eq("tss boom boom")
+  end
 end
