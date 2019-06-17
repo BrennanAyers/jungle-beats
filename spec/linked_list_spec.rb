@@ -108,4 +108,16 @@ describe 'Linked List' do
     expect(@list.includes?("boom")).to eq(true)
     expect(@list.includes?("bep")).to eq(false)
   end
+
+  it 'can remove the last sound of the list' do
+    @list.append("boom")
+    @list.append("bap")
+    @list.prepend("tss")
+    @list.insert(1, "boom")
+
+    @list.pop
+
+    expect(@list.count).to eq(3)
+    expect(@list.to_string).to eq("tss boom boom")
+  end
 end
