@@ -18,4 +18,10 @@ describe 'Jungle Beat' do
     expect(@jungle_beat.list.head.next_node.data).to eq("bam")
     expect(@jungle_beat.count).to eq(3)
   end
+
+  it 'can play sick beats' do
+    @jungle_beat.append("boom ba bap boom boom ba bap bap")
+
+    @jungle_beat.play
+  end
 end
